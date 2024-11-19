@@ -1,0 +1,68 @@
+
+body {
+    background-color: black;
+    color: white
+}
+
+#experiment-1 {
+    max-width: 500px;
+}
+
+#experiment-2 {
+    max-width: 12cm; /* dit is 466 px */
+}
+
+#experiment-3 {
+    max-width: 30em;
+}
+
+#experiment-4 {
+    max-width: 60ch;
+}
+
+#experiment-5 {
+    max-width: 30rem;
+}
+
+/* met een ander font*/
+
+#experiment-6 {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 500px;
+}
+
+#experiment-7 {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 12cm; 
+}
+
+#experiment-8 {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 30em;
+}
+
+#experiment-9 {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 60ch;
+}
+
+#experiment-10 {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 30rem;
+}
+
+/* als font veranderd moet de max-with aangepast worden want deze verschild per font!*/
+
+#experiment-11 {
+    max-width: 50vh;
+}
+#experiment-12 {
+    max-width: 27cqw;
+}
+#experiment-13 {
+    max-width: 27dvw;
+}
+#experiment-14 {
+    max-width: 27vmax;
+}
+/* dvw en vmax doen hetzelfde als cqw kortom deze zijn gelijk */ 
