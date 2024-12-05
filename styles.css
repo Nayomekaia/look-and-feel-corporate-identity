@@ -1,0 +1,477 @@
+/* Home page mobile versie*/
+
+body {
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column: 1 / 4;
+    align-items: center;
+}
+
+.notficatie {
+    grid-column: 1 / 3;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-family: var(--font-family-text);
+    font-weight: var(--font-weight-text);
+    animation: slideInFade 2s ease forwards, slideOutFade 1s ease 20s forwards; 
+}
+
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutFade {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+header .link-button {
+    display: grid;
+    grid-column: 3 / 4;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.logo {
+    position: relative;
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    place-items: center;
+}
+
+.logo img {
+    display: block;
+    width: 400px;
+    height: auto;
+    opacity: 70%;
+    animation: slow-zoom 10s infinite;
+}
+
+@keyframes slow-zoom {
+    0%, 100% {
+      transform: scale(1); 
+    }
+    50% {
+      transform: scale(1.15); 
+    }
+}
+
+.logo h1 {
+    position: absolute;
+    line-height: 0.90;
+    font-size: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+nav {
+    display: grid; 
+    grid-column: 1 / 4; 
+    grid-row: 3 / 4;     
+    justify-content: center;
+    align-items: center; 
+    
+    & .link-button {
+        margin-bottom: 100px;
+    }
+}
+
+
+/*homepage desktop versie*/
+@media screen and (min-width: 800px) {
+    .notficatie {
+        font-size: 24px;
+    }
+
+    .logo img {
+        width: 750px;
+        height: auto;
+    }
+
+    .logo h1 {
+        font-size: 6em;
+    }
+}
+
+
+/* Introductie Page mobile versie */
+.intro {
+    display: flex;
+    flex-direction: column;
+    position: relative;  
+    min-height: 100vh; 
+    align-items: center;
+    margin: 0; 
+    padding: 50px;
+}
+
+.main-intro {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    p { 
+        max-width: 22em;
+    }
+}
+
+.main-intro h2 {
+    font-family: var(--font-family-text);
+    font-weight: var(--font-weight-text);
+}
+
+.image-intro {
+    position: absolute;
+    width: 80%;
+    height: auto;
+}
+
+.image-intro img {
+    position: absolute;
+    width: 80%; 
+    height: auto;
+    left: 25%;
+    margin-top: 370px;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+.image-intro img:nth-child(1) {
+    animation-name: img1;
+    animation-delay: 1ms;
+}
+
+.image-intro img:nth-child(2) {
+    animation-name: img2;
+    animation-delay: 1ms;
+}
+
+.image-intro img:nth-child(3) {
+    animation-name: img3;
+    animation-delay: 1ms;
+}
+
+.image-intro img:nth-child(4) {
+    animation-name: img4;
+    animation-delay: 1ms;
+}
+
+@keyframes img1 {
+    0%, 20% { opacity: 1; }
+    25%, 100% { opacity: 0; }
+}
+
+@keyframes img2 {
+    0%, 25% { opacity: 0; }
+    30%, 50% { opacity: 1; }
+    55%, 100% { opacity: 0; }
+}
+
+@keyframes img3 {
+    0%, 50% { opacity: 0; }
+    55%, 75% { opacity: 1; }
+    80%, 100% { opacity: 0; }
+}
+
+@keyframes img4 {
+    0%, 75% { opacity: 0; }
+    80%, 100% { opacity: 1; }
+}
+
+.nav-intro { 
+    position: relative;
+    text-align: center;
+    margin-top: 340px
+}
+
+/* introductie page desktop versie */
+@media screen and (min-width: 800px) {
+    .main-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        padding: 20px;
+    }
+    
+    .main-intro h2, p {
+        grid-column: 1; 
+    }
+
+    .main-intro h2 {
+        font-size: 2em;
+    }
+
+    .main-intro .image-intro {
+        grid-column: 2;
+        position: relative; 
+    }
+
+    .image-intro img {
+        margin-top: -55%;
+        height: auto;
+        left: 60%;
+    }
+
+    .nav-intro {
+        margin-top: 50px;
+    }
+}
+
+/* Algemeen-informatie Page mobile versie */
+.body-algemeen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container-algemeen {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-algemeen, h1 {
+    text-align: left;
+}
+
+.section {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+/*Algemeen-informatie Page desktop versie */
+@media (min-width: 800px) {
+    .intro-sections {
+        display: flex; 
+        gap: 50px;
+    }
+
+    .section {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .header-algemeen, h1 span {
+        display: block;
+    }
+
+    .intro-sections h2 {
+        font-size: var(--font-size-header-l);
+    }
+
+    .nav-algemeen {
+        margin-top: 100px;
+    }
+}
+
+/* Rouwtaken page mobile versie */
+.body-rouwtaken {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    grid-template-columns: 1fr;
+    height: 100vh;
+    padding: 20px;
+}
+
+.header-rouwtaken {
+    grid-row: 1; 
+    width: 100%;
+    text-align: left;
+    padding: 20px 0; 
+}
+
+.header-rouwtaken h1 span {
+    display: block;
+}
+
+.rouwtaken {
+    display: grid;
+    grid-row: 2; 
+    grid-template-columns: 1fr;
+    text-align: left;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.rouwtaak-titel {
+    font-weight: bold;
+}
+
+.rouwtaak-img {
+    width: 100%;
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.rouwtaak:hover .rouwtaak-img {
+    transform: scale(1.2);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.rouwtaak-info {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.rouwtaak:hover .rouwtaak-info {
+    opacity: 1;
+}
+
+.rouwtaak-img img {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .rouwtaken {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 75px;
+        width: 85%;
+    }
+
+    .rouwtaak-img img {
+        width: 100%;
+    }
+
+    .rouwtaak-info {
+        font-size: 1rem;
+    }
+
+    nav {
+        text-align: right;
+    }
+}
+
+/* Account page  mobile versie*/
+.body-account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    }
+
+  .header-account h1 {
+    font-size: var(--font-size-header-s);
+   
+  }
+
+ h2 span {
+    display: block;
+  }
+
+  .main-account h2 {
+    text-align: center
+  }
+  .main-account {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+  }
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 30px;
+    max-width: 800px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.363);
+}
+
+#naam, #wachtwoord {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#inloggen {
+  margin-top: 200px;
+}
+.motto {
+  display: none;
+}
+
+/* account page desktop versie*/
+@media (min-width: 800px) {
+
+.body-account {
+  display: flex;
+}
+
+.header-account h1 { 
+  font-size: 1.5em;
+}
+
+.main-account { 
+ display: flex;
+ justify-content: space-between;
+ max-width: 80%;
+}
+
+.account-container {
+  width: 80%;
+  max-width: 600px;
+  min-height: 500px
+}
+
+.motto ,span{
+  display: block;
+}
+
+}
